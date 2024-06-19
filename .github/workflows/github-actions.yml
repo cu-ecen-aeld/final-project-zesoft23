@@ -17,6 +17,8 @@ jobs:
           - uses: webfactory/ssh-agent@v0.5.3
             with:
                 ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+          - name: Install Linux Headers that seem to be missing
+            run: apt-get update && apt-get install -y linux-headers-$(uname -r)
           - name: Run full test
             env:
               GIT_SSH_COMMAND: "ssh -o StrictHostKeyChecking=no"
