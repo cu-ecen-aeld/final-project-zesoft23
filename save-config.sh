@@ -1,11 +1,12 @@
 #!/bin/bash
 #Script to save the modified configuration as modified_qemu_aarch64_virt_defconfig and linux kernel configuration.
 #Author: Siddhant Jajoo.
+# Modified by Jack Thomson
 
 cd `dirname $0`
 source shared.sh
 mkdir -p base_external/configs/
-make -C buildroot savedefconfig BR2_DEFCONFIG=${AESD_MODIFIED_DEFCONFIG_REL_BUILDROOT}
+make -C buildroot savedefconfig BR2_DEFCONFIG=${MORSE_CODE_DRIVER_MODIFIED_DEFCONFIG_REL_BUILDROOT}
 
 if [ -e buildroot/.config ] && [ ls buildroot/output/build/linux-*/.config 1> /dev/null 2>&1 ]; then
 	grep "BR2_LINUX_KERNEL_CUSTOM_CONFIG_FILE" buildroot/.config > /dev/null
