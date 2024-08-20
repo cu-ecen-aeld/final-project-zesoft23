@@ -5,7 +5,7 @@
 #
 ##############################################################
 
-MORSE_CODE_DRIVER_VERSION = 'fcb913fb5c8f77d35af476df08cbf67cbce8cb51'
+MORSE_CODE_DRIVER_VERSION = '4fac2a6d4f902b6d097dca9397a1143173b79f8d'
 # Note: Be sure to reference the *ssh* repository URL here (not https) to work properly
 # with ssh keys and the automated build/test system.
 # Your site should start with git@github.com:
@@ -18,7 +18,7 @@ define MORSE_CODE_DRIVER_BUILD_CMDS
 endef
 
 define MORSE_CODE_DRIVER_INSTALL_TARGET_CMDS
-	$(INSTALL) -m 0755 $(@D)/hello $(TARGET_DIR)/usr/bin/hello
+	$(INSTALL) -m 0755 $(@D)/morse $(TARGET_DIR)/usr/bin/morse
 endef
 
-$(eval $(generic-package))
+# $(eval $(generic-package))
